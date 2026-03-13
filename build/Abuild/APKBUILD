@@ -3,7 +3,7 @@
 # Maintainer: Elliott Mazzuca <emazzuca@qnx.com>
 pkgname=python3-editables
 pkgver=0.5
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="library for creating editable wheels"
 url="https://github.com/pfmoore/editables"
 arch="noarch"
@@ -25,6 +25,7 @@ package() {
         .dist/*.whl
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 eba54a4624d4df6b2aaf33a46da1dfd4b218da4f89c5832401b074eae089bc59e1eae9e16291374c9f0406923e4c9d02682dabbc91ad263203cb897ba7dc796f  editables-0.5.tar.gz
 "
